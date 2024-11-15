@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Гамма</title>
+        <!-- NORMALIZE CSS -->
+        <link rel="stylesheet" href="./styles/_normalize.css" />
+        <!-- SWIPER CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <!-- STYLE CSS -->
+        <link rel="stylesheet" href="./styles/styles.css" />
+    </head>
+    <body class="app">
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-modal">&times;</span>
+                <h2 class="modal-title">Заполните форму</h2>
+                <form id="modal-form" class="modal-form">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" placeholder="Ваше имя" required />
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Ваш email" required />
+
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Ваш номер телефона" required />
+
+                    <button class="btn" type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+        <header class="header">
+            <div class="container">
+                <nav class="nav">
+                    <a href="#" class="nav__logo">
+                        <!-- prettier-ignore -->
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="45" height="45" viewBox="0 0 256 256" xml:space="preserve">
+                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+                                <path d="M 29.794 73.729 H 15.846 V 59.935 h 13.948 V 73.729 z M 18.846 70.762 h 7.948 v -7.86 h -7.948 V 70.762 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 74.794 73.729 H 60.847 V 59.935 h 13.947 V 73.729 z M 63.847 70.762 h 7.947 v -7.86 h -7.947 V 70.762 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 29.485 20.322 H 15.538 V 6.528 h 13.948 V 20.322 z M 18.538 17.355 h 7.948 v -7.86 h -7.948 V 17.355 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 47.485 20.322 H 33.538 V 6.528 h 13.948 V 20.322 z M 36.538 17.355 h 7.948 v -7.86 h -7.948 V 17.355 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 29.485 38.125 H 15.538 V 24.33 h 13.948 V 38.125 z M 18.538 35.158 h 7.948 v -7.86 h -7.948 V 35.158 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 47.485 38.125 H 33.538 V 24.33 h 13.948 V 38.125 z M 36.538 35.158 h 7.948 v -7.86 h -7.948 V 35.158 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 29.485 55.927 H 15.538 V 42.132 h 13.948 V 55.927 z M 18.538 52.96 h 7.948 v -7.86 h -7.948 V 52.96 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 47.485 55.927 H 33.538 V 42.132 h 13.948 V 55.927 z M 36.538 52.96 h 7.948 v -7.86 h -7.948 V 52.96 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 74.485 38.125 H 60.538 V 24.33 h 13.947 V 38.125 z M 63.538 35.158 h 7.947 v -7.86 h -7.947 V 35.158 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 74.485 55.927 H 60.538 V 42.132 h 13.947 V 55.927 z M 63.538 52.96 h 7.947 v -7.86 h -7.947 V 52.96 z" style="fill: currentColor; opacity: 1;" />
+                                <path d="M 82.467 87.033 V 17.355 H 55.533 V 0 h -48 v 87.033 H 2 V 90 h 31.846 h 13.948 H 88 v -2.967 H 82.467 z M 79.467 20.322 v 66.711 H 55.533 V 20.322 H 79.467 z M 36.846 87.033 V 62.902 h 7.948 v 24.131 H 36.846 z M 33.846 59.935 v 27.098 H 10.533 V 2.967 h 42 v 84.066 h -4.739 V 59.935 H 33.846 z" style="fill: currentColor; opacity: 1;" />
+                            </g>
+                        </svg>
+                        Гамма
+                    </a>
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link" href="#about">О нас</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#portfolio">Портфолио</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#faq">FAQ</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#contacts">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__preview">
+                    <h1 class="header__preview-title">Компания Гамма: &nbsp; строим будущее, начиная с бытовки</h1>
+                    <div class="header__preview-content">
+                        <h2 class="header__preview-subtitle">
+                            Всё, что нужно для организации комфортного пространства на стройплощадке
+                        </h2>
+                        <p class="header__preview-description">
+                            Наша компания предлагает надёжные, комфортабельные и многофункциональные бытовки, идеально
+                            подходящие для строительных площадок и временного проживания. Производим и поставляем
+                            бытовки различных типов: от стандартных до полностью адаптированных под ваши требования.
+                            Качество, проверенное временем, и гибкие условия доставки — всё для вашего удобства.
+                        </p>
+                        <a href="#" class="btn open-modal">Оставить заявку</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="home container">
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="swiper__content">
+                                <img src="./images/slide1.jpg" alt="slide1" />
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper__content">
+                                <img src="./images/slide2.jpg" alt="slide2" />
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper__content">
+                                <img src="./images/slide3.jpg" alt="slide3" />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </section>
+            <section class="about container" id="about">
+                <div class="about__content">
+                    <div class="about__info">
+                        <h2 class="about__title">О НАС</h2>
+                        <p class="about__description">
+                            Наша компания — это более десяти лет опыта в производстве строительных бытовок и модульных
+                            зданий, которые помогают нашим клиентам создавать комфортные и надежные условия для работы и
+                            жизни даже в самых сложных условиях. Мы работаем как с крупными строительными компаниями,
+                            так и с частными заказчиками, предлагая решения, отвечающие высоким стандартам качества.
+                        </p>
+                        <p class="about__description">Наша компания в цифрах</p>
+                        <ul class="about__list">
+                            <li class="about__list-item">
+                                <div class="about__list-point">1</div>
+                                20 лет на строительном рынке
+                            </li>
+                            <li class="about__list-item">
+                                <div class="about__list-point">2</div>
+                                8 стран поставщиков материалов
+                            </li>
+                            <li class="about__list-item">
+                                <div class="about__list-point">3</div>
+                                Более 300 довольных компаний - клиентов
+                            </li>
+                            <li class="about__list-item">
+                                <div class="about__list-point">4</div>
+                                Более 800 выполненных заказов
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about__image">
+                        <img src="./images/build_container.jpg" alt="container img" />
+                    </div>
+                </div>
+                <div class="about__advantages">
+                    <h2 class="about__advantages-title">ПОЧЕМУ ВЫБИРАЮТ НАС?</h2>
+                    <ul class="about__advantages-list">
+                        <li class="about__advantages-list-item">
+                            <div class="about__advantages-list-point">1</div>
+                            <h3 class="about__advantages-list-title">Широкий ассортимент</h3>
+                            <p class="about__advantages-list-desc">Производим бытовки для строительных и жилых нужд</p>
+                        </li>
+                        <li class="about__advantages-list-item">
+                            <div class="about__advantages-list-point">2</div>
+                            <h3 class="about__advantages-list-title">Высокое качество</h3>
+                            <p class="about__advantages-list-desc">
+                                Используем только проверенные материалы и современные технологи
+                            </p>
+                        </li>
+                        <li class="about__advantages-list-item">
+                            <div class="about__advantages-list-point">3</div>
+                            <h3 class="about__advantages-list-title">Гибкость производства</h3>
+                            <p class="about__advantages-list-desc">
+                                Изготавливаем по индивидуальным заказам, адаптируем под ваши желания
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="portfolio container" id="portfolio">
+                <h2 class="portfolio__title">НАШЕ ПОРТФОЛИО</h2>
+                <div class="portfolio__items">
+                    <p class="portfolio__text">Наша компания производит:</p>
+                    <ul class="portfolio__list">
+                        <li class="portfolio__list-item">
+                            <div class="portfolio__list-point">1</div>
+                            Жилые
+                            <br />
+                            бытовки
+                        </li>
+                        <li class="portfolio__list-item">
+                            <div class="portfolio__list-point">2</div>
+                            Душевые
+                            <br />
+                            бытовки
+                        </li>
+                        <li class="portfolio__list-item">
+                            <div class="portfolio__list-point">3</div>
+                            Блоки
+                            <br />
+                            охраны
+                        </li>
+                        <li class="portfolio__list-item">
+                            <div class="portfolio__list-point">4</div>
+                            Модульные
+                            <br />
+                            бытовки
+                        </li>
+                    </ul>
+                </div>
+                <p class="portfolio__description">
+                    <span>
+                        Каждый проект — это результат нашей заботы о качестве и внимательного отношения к требованиям
+                        клиентов.
+                    </span>
+                    <br />
+                    На этой странице представлены фотографии и описания наших проектов: от стандартных моделей бытовок,
+                    используемых для строительных нужд, до индивидуально разработанных модулей для временного проживания
+                    и мобильных офисов.
+                </p>
+                <div class="portfolio__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide portfolio__swiper-slide">
+                            <img src="./images/portfolio//slide1.jpg" />
+                        </div>
+                        <div class="swiper-slide portfolio__swiper-slide">
+                            <img src="./images/portfolio/slide2.jpg" />
+                        </div>
+                        <div class="swiper-slide portfolio__swiper-slide">
+                            <img src="./images/portfolio/slide3.jpg" />
+                        </div>
+                        <div class="swiper-slide portfolio__swiper-slide">
+                            <img src="./images/portfolio/slide4.jpg" />
+                        </div>
+                        <div class="swiper-slide portfolio__swiper-slide">
+                            <img src="./images/portfolio/slide5.jpg" />
+                        </div>
+                        <div class="swiper-slide portfolio__swiper-slide">
+                            <img src="./images/portfolio/slide6.jpg" />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="portfolio__buy">
+                    <span class="portfolio__buy-text">Вам нужен вагончик?</span>
+                    <a href="#" class="btn open-modal">Заказать</a>
+                </div>
+            </section>
+            <section class="faq" id="faq">
+                <h2 class="faq__title">Часто задаваемые вопросы (FAQ)</h2>
+                <details>
+                    <summary>Каковы условия гарантии?</summary>
+                    <p>Гарантия предоставляется на 12 месяцев</p>
+                </details>
+                <details>
+                    <summary>Есть ли возможность аренды бытовок?</summary>
+                    <p>Да, мы предоставляем бытовки в аренду</p>
+                </details>
+                <details>
+                    <summary>Какие сроки выполнения заказа?</summary>
+                    <p>Срок выполнения заказа зависит от объема работы, но среднее мремя 30 дней</p>
+                </details>
+                <details>
+                    <summary>Можно ли заказать бытовку по индивидуальному проекту?</summary>
+                    <p>Мы готовы рассмотреть ваш проект</p>
+                </details>
+                <details>
+                    <summary>Как организована доставка и установка бытовок?</summary>
+                    <p>Бытовки собираются на месте, благодаря модульной архитектуре</p>
+                </details>
+            </section>
+        </main>
+        <footer class="footer container" id="contacts">
+            <h2 class="footer__title">Контактная информация</h2>
+            <div class="footer__subscribe">
+                <div class="footer__subscribe-text">Подпишитесь и узнайте первыми о наших скидках и акциях</div>
+                <form class="footer__subscribe-form">
+                    <input class="footer__subscribe-input" type="email" placeholder="Ваш email" />
+                    <button class="footer__subscribe-button btn" type="submit">Подписаться</button>
+                </form>
+            </div>
+            <p class="footer__contact-info">
+                Наш офис находится по адресу: г. Москва, ул. Примерная, 15. Свяжитесь с нами по телефону +7 (123)
+                456-78-90 или отправьте нам сообщение на email info@company.ru.
+            </p>
+        </footer>
+        <!-- SCRIPTS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="./scripts/main.js"></script>
+    </body>
+</html>
