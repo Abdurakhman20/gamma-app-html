@@ -353,7 +353,7 @@ a {
 .about__advantages-list-item {
     display: flex;
     flex-direction: column;
-    width: 250px;
+    width: 260px;
     min-height: 190px;
 }
 
