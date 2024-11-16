@@ -5,6 +5,12 @@
     --light-color: #fafafa;
     --accent-color: #008080;
     --bg-color: #dfdfdf;
+    --desktop-font-size: 1.6rem;
+    --desktop-title-size: 3.3rem;
+    --desktop-subtitle-size: 2.2rem;
+    --mobile-font-size: 1.2rem;
+    --mobile-title-size: 2.2rem;
+    --mobile-subtitle-size: 1.6rem;
 }
 
 *,
@@ -29,7 +35,7 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     font-weight: normal;
-    font-size: 1.6rem;
+    font-size: var(--desktop-font-size);
     background-color: var(--light-color);
 }
 
@@ -63,8 +69,10 @@ a {
     cursor: pointer;
 }
 
-.btn:hover {
-    opacity: 0.8;
+@media (hover: hover) {
+    .btn:hover {
+        opacity: 0.8;
+    }
 }
 
 /* HEADER */
@@ -90,7 +98,7 @@ a {
 }
 
 .header__preview-title {
-    font-size: 3.3rem;
+    font-size: var(--desktop-title-size);
     font-weight: 500;
     margin-bottom: 25px;
     text-transform: uppercase;
@@ -105,7 +113,7 @@ a {
 }
 
 .header__preview-subtitle {
-    font-size: 2.2rem;
+    font-size: var(--desktop-subtitle-size);
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -140,8 +148,10 @@ a {
     transition: all 0.2s ease-in-out;
 }
 
-.nav__logo:hover {
-    color: var(--accent-color);
+@media (hover: hover) {
+    .nav__logo:hover {
+        color: var(--accent-color);
+    }
 }
 
 .nav__logo:hover path {
@@ -160,27 +170,69 @@ a {
     transition: color 0.2s ease-in-out;
 }
 
-.nav__link:hover {
-    color: var(--accent-color);
+@media (hover: hover) {
+    .nav__link:hover {
+        color: var(--accent-color);
+    }
 }
 
-.nav__link::after {
-    content: '';
-    display: inline-block;
-    opacity: 0;
-    position: absolute;
-    top: 25px;
-    left: 0px;
-    width: 0px;
-    height: 3px;
-    border-radius: 10px;
-    background-color: var(--accent-color);
-    transition: all 0.2s ease-in-out;
+@media (hover: hover) {
+    .nav__link::after {
+        content: '';
+        display: inline-block;
+        opacity: 0;
+        position: absolute;
+        top: 25px;
+        left: 0px;
+        width: 0px;
+        height: 3px;
+        border-radius: 10px;
+        background-color: var(--accent-color);
+        transition: all 0.2s ease-in-out;
+    }
 }
 
 .nav__link:hover::after {
     opacity: 1;
     width: 100%;
+}
+
+.nav__burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 30px;
+    padding: 2px;
+    background-color: var(--light-color);
+}
+
+.nav__burger-line {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 2px;
+    border-radius: 10px;
+    background-color: var(--main-color);
+    transition: transform 0.3s ease;
+}
+
+.nav__burger.open .nav__burger-line:first-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav__burger.open .nav__burger-line:nth-child(2) {
+    display: none;
+}
+
+.nav__burger.open .nav__burger-line:last-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 /* SWIPER */
@@ -229,7 +281,7 @@ a {
 }
 
 .about__title {
-    font-size: 3.3rem;
+    font-size: var(--desktop-title-size);
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -285,7 +337,7 @@ a {
 }
 
 .about__advantages-title {
-    font-size: 3.3rem;
+    font-size: var(--desktop-title-size);
     font-weight: 500;
     width: 250px;
     margin: 0;
@@ -317,7 +369,7 @@ a {
 }
 
 .about__advantages-list-title {
-    font-size: 2.2rem;
+    font-size: var(--desktop-subtitle-size);
     font-weight: 500;
     margin-top: 15px;
 }
@@ -334,7 +386,7 @@ a {
     margin-top: 100px;
 }
 .portfolio__title {
-    font-size: 3.3rem;
+    font-size: var(--desktop-title-size);
     font-weight: 500;
     margin-bottom: 25px;
     text-transform: uppercase;
@@ -349,7 +401,7 @@ a {
 }
 
 .portfolio__text {
-    font-size: 2.2rem;
+    font-size: var(--desktop-subtitle-size);
     font-weight: 500;
     width: 180px;
 }
@@ -383,7 +435,7 @@ a {
 
 .portfolio__description span {
     display: inline-block;
-    font-size: 2.2rem;
+    font-size: var(--desktop-subtitle-size);
     padding-bottom: 15px;
 }
 
@@ -414,7 +466,7 @@ a {
 }
 
 .portfolio__buy-text {
-    font-size: 2.2rem;
+    font-size: var(--desktop-subtitle-size);
     font-weight: 500;
     margin-right: 30px;
 }
@@ -428,7 +480,7 @@ a {
 }
 
 .faq__title {
-    font-size: 3.3rem;
+    font-size: var(--desktop-title-size);
     font-weight: 500;
     margin-bottom: 25px;
     text-transform: uppercase;
@@ -457,14 +509,14 @@ details[open] {
 }
 
 .footer__title {
-    font-size: 3.3rem;
+    font-size: var(--desktop-title-size);
     font-weight: 500;
     margin-bottom: 25px;
     text-transform: uppercase;
 }
 
 .footer__subscribe-form {
-    font-size: 1.6rem;
+    font-size: var(--desktop-font-size);
     font-family: inherit;
 }
 
@@ -517,7 +569,7 @@ details[open] {
 }
 
 .modal-title {
-    font-size: 2.2rem;
+    font-size: var(--desktop-subtitle-size);
     font-weight: 500;
     text-transform: uppercase;
     text-align: center;
@@ -538,7 +590,7 @@ details[open] {
     display: flex;
     gap: 10px;
     flex-direction: column;
-    font-size: 1.6rem;
+    font-size: var(--desktop-font-size);
     font-family: inherit;
 }
 
