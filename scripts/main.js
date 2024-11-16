@@ -55,11 +55,10 @@ document.addEventListener('scroll', () => {
 });
 
 document.querySelectorAll('.faq details').forEach((detail) => {
-    console.log(detail);
-    detail.addEventListener('toggle', (event) => {
-        if (event.target.open) {
+    detail.addEventListener('toggle', (e) => {
+        if (e.target.open) {
             document.querySelectorAll('.faq details').forEach((otherDetail) => {
-                if (otherDetail !== event.target) {
+                if (otherDetail !== e.target) {
                     otherDetail.removeAttribute('open');
                 }
             });
@@ -68,28 +67,46 @@ document.querySelectorAll('.faq details').forEach((detail) => {
 });
 
 const modal = document.getElementById('modal');
+const modalForm = document.getElementById('modal-form');
 const btns = document.querySelectorAll('.open-modal');
 const span = document.getElementById('close-modal');
 
 btns.forEach((btn) => {
-    btn.onclick = function () {
+    btn.onclick = () => {
         modal.style.display = 'block';
     };
 });
 
-span.onclick = function () {
+span.onclick = () => {
     modal.style.display = 'none';
 };
 
-window.onclick = function (event) {
-    if (event.target == modal) {
+window.onclick = (e) => {
+    if (e.target == modal) {
         modal.style.display = 'none';
     }
 };
 
-document.getElementById('modal-form').onsubmit = function (e) {
+modalForm.onsubmit = (e) => {
     e.preventDefault();
 
-    alert('Форма отправлена!');
+    const data = new FormData(modalForm);
     modal.style.display = 'none';
+
+    if (
+        confirm(`Подтвердите отправку формы: 
+        Имя: ${data.get('name')}
+        Email: ${data.get('email')}
+        Телефон: ${data.get('phone')}`)
+    ) {
+        console.log(`
+            Имя: ${data.get('name')}
+            Email: ${data.get('email')}
+            Телефон: ${data.get('phone')}
+        `);
+
+        modalForm.reset();
+    } else {
+        modalForm.reset();
+    }
 };
